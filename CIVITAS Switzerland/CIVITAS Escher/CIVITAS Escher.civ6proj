@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>CIVITAS [ICON_GREATPERSON] Alfred Escher</Name>
+    <Guid>013de0f5-5bd7-43f7-b48b-30e72d0ddb4c</Guid>
+    <ProjectGuid>13c77d2c-5942-45dc-be43-3ffdc7f0d047</ProjectGuid>
+    <ModVersion>1</ModVersion>
+    <Teaser>Adds Alfred Escher as a leader for CIVITAS Switzerland.</Teaser>
+    <Description>Adds Alfred Escher as a leader for CIVITAS [ICON_GOVERNMENT] Switzerland.</Description>
+    <Authors>Digihuman, ChimpanG, SeelingCat</Authors>
+    <SpecialThanks>Dray, WeeklyMeat</SpecialThanks>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <ModProperties>
+      <CompatibleVersions>2.0</CompatibleVersions>
+    </ModProperties>
+    <AssemblyName>CIVITAS Escher</AssemblyName>
+    <RootNamespace>CIVITAS Escher</RootNamespace>
+    <AssociationData><![CDATA[<Associations>
+  <Dependency type="Mod" title="CIVITAS [ICON_GOVERNMENT] Switzerland" id="146e6097-1905-465e-9ad0-258b5024fc08" />
+</Associations>]]></AssociationData>
+    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateArt id="ArtDep"><File>(Mod Art Dependency File)</File></UpdateArt><UpdateDatabase id="Escher_Setup_DB"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Config.sql</File></UpdateDatabase><UpdateText id="Escher_Setup_Text"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Localisation.sql</File></UpdateText><UpdateIcons id="Escher_Setup_Icons"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Icons.sql</File></UpdateIcons><UpdateColors id="Escher_Setup_Colors"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Colors.sql</File></UpdateColors></FrontEndActions>]]></FrontEndActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateArt id="ArtDep"><File>(Mod Art Dependency File)</File></UpdateArt><UpdateDatabase id="Escher_DB"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Leader.sql</File><File>Core/Escher_UA.sql</File><File>Core/Escher_Agenda.sql</File><File>Core/Escher_Strategy.sql</File></UpdateDatabase><UpdateText id="Escher_Text"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Localisation.sql</File></UpdateText><UpdateIcons id="Escher_Icons"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Icons.sql</File></UpdateIcons><UpdateColors id="Escher_Colours"><Properties><LoadOrder>110</LoadOrder></Properties><File>Core/Escher_Colors.sql</File></UpdateColors></InGameActions>]]></InGameActionData>
+    <ActionCriteriaData><![CDATA[<ActionCriteria><Criteria id="XP1"><RuleSetInUse>RULESET_EXPANSION_1</RuleSetInUse></Criteria><Criteria id="XP2"><RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse></Criteria></ActionCriteria>]]></ActionCriteriaData>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="Mod.Art.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArtDefs\" />
+    <Folder Include="Core" />
+    <Folder Include="Core\Translation" />
+    <Folder Include="XLPs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ArtDefs\LeaderFallbacks.artdef">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ArtDefs\Leaders.artdef">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_Agenda.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_Colors.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_Config.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_Icons.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_Leader.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_Localisation.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_Strategy.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Escher_UA.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Core\Translation\Escher_Localisation_de_DE.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\Icons.xlp">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\LeaderFallbacks.xlp">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
+</Project>
